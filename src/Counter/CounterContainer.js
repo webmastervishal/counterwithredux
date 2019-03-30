@@ -11,8 +11,7 @@ class CounterContainer extends Component {
     }
 
     inc = () => {
-        this.props.incCount(1);
-        this.props.decCount(2);
+        this.props.incCount(this.props.counter.count);
     }
 
     dec = () => {

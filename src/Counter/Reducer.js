@@ -4,18 +4,11 @@ const initialState = {
     count: 0
 }
 
-const Reducer = (state = initialState,action) => {
-    console.log(action);
-    switch(action.type) {
-        case actions.INCREMENT_COUNT:
-            // console.log('inside the reducer',action);
+const Reducer = (state = initialState,{type,payload}) => {
+    switch(type) {
+        case actions.UPDATE_COUNT:
             return {
-                count: state.count + action.payload
-            };
-        case actions.DECREMENT_COUNT:
-            // console.log('inside the reducer', action);
-            return {
-                count: state.count - action.payload
+                count: payload
             }
         default: 
             return state;
